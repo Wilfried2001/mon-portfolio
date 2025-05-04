@@ -17,7 +17,7 @@ function Hero() {
           className="flex-1 flex justify-center mt-10 md:mt-0"
         >
           <img
-            src="public/image/photo.jpeg" // <-- Mets ici ton chemin d'image
+            src="image/photo.jpeg" // <-- Mets ici ton chemin d'image
             alt=""
             className="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover shadow-lg hover:scale-105 transition-transform duration-300"
           />
