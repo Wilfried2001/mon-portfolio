@@ -13,8 +13,9 @@ function About() {
         <h2 className="text-3xl font-bold mb-4">À propos de <span className="text-cyan-400">moi</span></h2>
         
         <p className="text-lg max-w-2xl mx-auto">
-          Je suis développeur full-stack, passionné par la technologie et la résolution de problèmes. J’aime créer des
+          Je suis développeur junior full-stack web et mobile,passionné par la technologie et la résolution de problèmes. J’aime créer des
           applications web et mobiles modernes, performantes et intuitives.
+          
         </p>
       </motion.div>
     </section>

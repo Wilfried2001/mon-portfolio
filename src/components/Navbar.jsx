@@ -27,7 +27,7 @@ function Navbar() {
       
     >
       <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center text-white">
-        <h1 className="text-3xl font-bold text-white shadow-lg hover:shadow-2xl transition duration-300">Wilfried</h1>
+      <img src="image/Logo.png" alt="" className='w-16 h-16' />
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6">

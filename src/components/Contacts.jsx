@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 function Contact() {
   return (
@@ -11,15 +11,23 @@ function Contact() {
         transition={{ duration: 1 }}
       >
         <h2 className="text-4xl font-bold text-cyan-500 mb-6">Contact</h2>
-        <p className=" mb-8">Envie de collaborer ou de discuter ? Contacte-moi !</p>
-        <div className="flex justify-center space-x-8 text-3xl text-indigo-600">
-          <a href="#"><FaGithub /></a>
-          <a href="#"><FaLinkedin /></a>
-          <a href="#"><FaEnvelope /></a>
+        <p className=" mb-8">
+          Envie de collaborer ou de discuter ? Contacte-moi !
+        </p>
+        <div className="flex justify-center space-x-8 text-3xl text-cyan-500">
+          <a href="https://github.com/Wilfried2001">
+            <FaGithub />
+          </a>
+          <a href=" https://www.linkedin.com/in/wilfried-amougui-dev ">
+            <FaLinkedin />
+          </a>
+          <a href="https://www.yahoo.com/mail/wilfriedamougui@yahoo.com">
+            <FaEnvelope />
+          </a>
         </div>
       </motion.div>
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;

@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion'
+import { motion } from "framer-motion";
 
 function TechStack() {
   return (
-    <section id="tech-stack" className="py-24">
+    <section id="tech-stack" className="py-36">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-8">
+        <h2 className="text-3xl font-bold text-center mb-4">
           Technologies <span className="text-cyan-400">utilisées</span>
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -86,11 +86,11 @@ function TechStack() {
             className="tech-item flex flex-col items-center"
           >
             <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/html5.svg"
-              alt="HTML5"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/java.svg"
+              alt="Java"
               className="w-16 h-16 mb-4"
             />
-            <span className="text-xl font-semibold">HTML5</span>
+            <span className="text-xl font-semibold">Java</span>
           </motion.div>
 
           <motion.div
@@ -100,11 +100,12 @@ function TechStack() {
             className="tech-item flex flex-col items-center"
           >
             <img
-              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/css3.svg"
-              alt="CSS3"
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/react.svg"
+              alt="React Native"
               className="w-16 h-16 mb-4"
             />
-            <span className="text-xl font-semibold">CSS3</span>
+            <span className="text-xl font-semibold">React Native</span>
+            
           </motion.div>
 
           <motion.div
@@ -120,10 +121,62 @@ function TechStack() {
             />
             <span className="text-xl font-semibold">Git</span>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="tech-item flex flex-col items-center"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/github.svg"
+              alt="GitHub"
+              className="w-16 h-16 mb-4"
+            />
+            <span className="text-xl font-semibold">GitHub</span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            className="tech-item flex flex-col items-center"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/figma.svg"
+              alt="Figma"
+              className="w-16 h-16 mb-4"
+            />
+            <span className="text-xl font-semibold">Figma</span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+            className="tech-item flex flex-col items-center"
+          >
+           <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/html5.svg"
+              alt="HTML5"
+              className="w-16 h-16 mb-4"
+            />
+            <span className="text-xl font-semibold">HTML5</span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+            className="tech-item flex flex-col items-center"
+          >
+             <img
+              src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/css3.svg"
+              alt="CSS3"
+              className="w-16 h-16 mb-4"
+            />
+            <span className="text-xl font-semibold">CSS3</span>
+          </motion.div>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default TechStack
+export default TechStack;

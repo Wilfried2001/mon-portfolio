@@ -36,9 +36,9 @@ function Hero() {
           <p className="text-lg md:text-xl text-slate-300 font-medium mb-6">
             <Typewriter
               words={[
-                "Développeur Web & Mobile",
+                "Développeur junior Web & Mobile",
                 "Créateur de solutions innovantes",
-                "Passionné par l'UX et les nouvelles technos",
+                "Passionné par les nouvelles technos",
               ]}
               loop
               cursor
