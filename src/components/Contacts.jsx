@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaWhatsapp, FaTelegram, FaDiscord } from "react-icons/fa";
 
 function Contact() {
   return (
@@ -14,7 +14,7 @@ function Contact() {
         <p className=" mb-8">
           Envie de collaborer ou de discuter ? Contacte-moi !
         </p>
-        <div className="flex justify-center space-x-8 text-3xl text-cyan-500">
+        <div className="animate-bounce flex justify-center space-x-8 text-3xl text-cyan-500">
           <a href="https://github.com/Wilfried2001">
             <FaGithub />
           </a>
@@ -24,6 +24,18 @@ function Contact() {
           <a href="https://www.yahoo.com/mail/wilfriedamougui@yahoo.com">
             <FaEnvelope />
           </a>
+          <a href="https://wa.me/695359269" target="_blank" rel="noopener noreferrer">
+        <FaWhatsapp />
+      </a>
+      <a href="https://t.me/Wizzy237" target="_blank" rel="noopener noreferrer">
+        <FaTelegram />
+      </a>
+      <a href="https://discord.com/users/darkwizzy_" target="_blank" rel="noopener noreferrer">
+        <FaDiscord />
+      </a>
+      <a href="tel:+237695359269">
+        <FaPhone />
+      </a>
         </div>
       </motion.div>
     </section>

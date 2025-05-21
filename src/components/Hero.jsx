@@ -19,7 +19,7 @@ function Hero() {
           <img
             src="image/photo.jpeg" // <-- Mets ici ton chemin d'image
             alt=""
-            className="w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover shadow-lg hover:scale-105 transition-transform duration-300"
+            className="  w-48 h-48 sm:w-64 sm:h-64 rounded-full object-cover shadow-lg hover:scale-105 transition-transform duration-300"
           />
         </motion.div>
 
