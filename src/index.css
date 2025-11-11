@@ -1,3 +1,26 @@
+/* Loader spinner animation */
+.loader-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid #e0e7ef;
+  border-top: 4px solid #06b6d4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+/* Accessibilité : focus visible sur tous les liens et boutons */
+a, button, .tech-badge {
+  outline: none;
+}
+a:focus-visible, button:focus-visible, .tech-badge:focus-visible {
+  box-shadow: 0 0 0 3px var(--tw-shadow-color, #06b6d4);
+  outline: 2px solid var(--tw-shadow-color, #06b6d4);
+  outline-offset: 2px;
+  z-index: 10;
+  transition: box-shadow 0.2s, outline 0.2s;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +40,32 @@ html {
 .animate-gradient-x {
   background-size: 200% 200%;
   animation: gradient-x 6s ease infinite;
+}
+
+/* Small reusable badge for tech labels */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.08);
+  cursor: pointer;
+  outline: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.tech-badge:hover, .tech-badge:focus {
+  background: var(--tw-prose-invert-bullets, #e0f2fe);
+  color: #0e7490;
+  box-shadow: 0 8px 24px rgba(6,182,212,0.15);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* subtle global touch to make sections feel modern */
+.soft-section {
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));
 }
 
 
