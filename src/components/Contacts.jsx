@@ -19,8 +19,6 @@ function Contact() {
     setSending(true);
     statusEl.textContent = "Envoi en cours...";
 
-    // Replace `your_form_id` with your Formspree form id. See https://formspree.io
-    const endpoint = "https://formspree.io/f/your_form_id";
     const data = {
       name: (document.getElementById("contact-name") || {}).value,
       email: (document.getElementById("contact-email") || {}).value,
@@ -28,7 +26,7 @@ function Contact() {
     };
 
     try {
-      const res = await fetch(endpoint, {
+      const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

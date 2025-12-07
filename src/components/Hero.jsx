@@ -12,6 +12,28 @@ import {
   FaDownload,
 } from "react-icons/fa";
 
+function SpringIcon({ className }) {
+  return (
+    <svg
+      className={className}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="18"
+      height="18"
+      aria-hidden="true"
+    >
+      <path
+        fill="currentColor"
+        d="M12 2C8.7 2 6 4.7 6 8c0 1.9.9 3.6 2.3 4.7-.2.5-.3 1-.3 1.6 0 2.8 2.2 5 5 5s5-2.2 5-5c0-3.3-2.7-6-6-6-.6 0-1.1.1-1.6.3C13.4 8.9 15 7 15 5c0-1.7-1.3-3-3-3z"
+      />
+      <path
+        fill="currentColor"
+        d="M9 12c0-1.7 1.3-3 3-3s3 1.3 3 3-1.3 3-3 3-3-1.3-3-3z"
+      />
+    </svg>
+  );
+}
+
 function Hero() {
   return (
     <>
@@ -68,6 +90,10 @@ function Hero() {
             <span className="tech-badge bg-accent-light dark:bg-accent-dark text-accent-dark dark:text-accent-light focus:outline-accent transition-all">
               <FaMobileAlt className="text-accent" title="Mobile" />
               Mobile
+            </span>
+            <span className="tech-badge bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-200 focus:outline-accent transition-all">
+              <SpringIcon className="inline-block mr-2 text-green-600" />
+              Spring Boot
             </span>
             <span className="tech-badge bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 focus:outline-accent transition-all">
               <FaNodeJs className="text-tech-node" title="Node.js" />
