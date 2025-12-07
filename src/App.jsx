@@ -14,7 +14,11 @@ function App() {
     try {
       const saved = localStorage.getItem("theme");
       if (saved) return saved;
-      if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      )
+        return "dark";
     } catch (e) {}
     return "light";
   });
@@ -35,6 +39,25 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1200);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Observe sections and add `in-view` class when they enter the viewport (simple reveal animation)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    const sections = document.querySelectorAll("section");
+    sections.forEach((s) => observer.observe(s));
+
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));

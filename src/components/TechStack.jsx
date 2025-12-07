@@ -18,7 +18,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/react.svg"
               alt="React"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">React</span>
           </motion.div>
@@ -32,7 +32,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/laravel.svg"
               alt="Laravel"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">Laravel</span>
           </motion.div>
@@ -46,7 +46,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/mysql.svg"
               alt="MySQL"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">MySQL</span>
           </motion.div>
@@ -60,7 +60,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/tailwindcss.svg"
               alt="Tailwind CSS"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">Tailwind CSS</span>
           </motion.div>
@@ -74,7 +74,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/javascript.svg"
               alt="JavaScript"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">JavaScript</span>
           </motion.div>
@@ -88,7 +88,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/java.svg"
               alt="Java"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">Java</span>
           </motion.div>
@@ -102,10 +102,9 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/react.svg"
               alt="React Native"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">React Native</span>
-            
           </motion.div>
 
           <motion.div
@@ -117,7 +116,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/git.svg"
               alt="Git"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">Git</span>
           </motion.div>
@@ -130,7 +129,7 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/github.svg"
               alt="GitHub"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">GitHub</span>
           </motion.div>
@@ -143,33 +142,33 @@ function TechStack() {
             <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/figma.svg"
               alt="Figma"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">Figma</span>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 50 }} 
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.1 }}
             className="tech-item flex flex-col items-center"
           >
-           <img
+            <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/html5.svg"
               alt="HTML5"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">HTML5</span>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: 50 }} 
+            initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1.1 }}
             className="tech-item flex flex-col items-center"
           >
-             <img
+            <img
               src="https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/css3.svg"
               alt="CSS3"
-              className="w-16 h-16 mb-4"
+              className="w-16 h-16 mb-4 tech-logo"
             />
             <span className="text-xl font-semibold">CSS3</span>
           </motion.div>

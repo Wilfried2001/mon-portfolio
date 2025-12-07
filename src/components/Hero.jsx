@@ -27,13 +27,16 @@ function Hero() {
           className="w-full md:w-1/3 flex justify-center mt-6 md:mt-0"
         >
           <div className="relative group">
-            <img
-              src="image/photo.jpeg"
-              alt="Wizzy Dev"
-              loading="lazy"
-              className="w-44 h-44 sm:w-56 sm:h-56 rounded-full object-cover shadow-2xl ring-2 ring-slate-200 dark:ring-slate-700 transition-transform duration-300 group-hover:scale-105 group-focus:scale-105"
-              tabIndex={0}
-            />
+            <picture>
+              <source srcSet="/image/photo.jpeg" type="image/webp" />
+              <img
+                src="image/photo.jpeg"
+                alt="Wizzy Dev"
+                loading="lazy"
+                className="w-44 h-44 sm:w-56 sm:h-56 rounded-full object-cover shadow-2xl ring-2 ring-slate-200 dark:ring-slate-700 transition-transform duration-300 group-hover:scale-105 group-focus:scale-105"
+                tabIndex={0}
+              />
+            </picture>
             {/* Halo animé */}
             <span
               aria-hidden="true"
@@ -83,7 +86,8 @@ function Hero() {
           <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 font-medium mb-6">
             <Typewriter
               words={[
-                "Développeur junior Web & Mobile",
+                "Développeur Web & Mobile",
+                "Backend Lover",
                 "Créateur de solutions innovantes",
                 "Passionné par les nouvelles technos",
               ]}

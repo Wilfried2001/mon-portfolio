@@ -20,8 +20,7 @@ const projets = [
   {
     titre: "Ide",
     image: "image/project3.png",
-    description:
-      "Editeur de texte en ligne fait avec React Js et Tailwindcss.",
+    description: "Editeur de texte en ligne fait avec React Js et Tailwindcss.",
     techno: ["React Js"],
     lien: "https://react-ide-sigma.vercel.app/",
   },
@@ -31,6 +30,14 @@ const projets = [
     description: "Slider d'image fait avec react Js et Tailwindcss.",
     techno: ["React js", "Tailwind"],
     lien: "https://react-slider-zeta.vercel.app/",
+  },
+  {
+    titre: "Geodata",
+    description:
+      "Application qui permet de connaitre toutes les informations de base des pays d'europe et qui consomme une api pour avoir ces informations .",
+    image: "image/project5.png",
+    techno: ["React js", "Tailwind"],
+    lien: "https://geo-europe-data.vercel.app/",
   },
 ];
 
@@ -55,7 +62,8 @@ function Realisations() {
               <img
                 src={p.image}
                 alt={p.titre}
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300 tech-logo"
               />
               <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2 text-primary-dark dark:text-primary-light">

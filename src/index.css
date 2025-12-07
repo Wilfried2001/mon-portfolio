@@ -1,3 +1,11 @@
+/* Rendre les logos tech visibles en mode sombre */
+.tech-logo {
+  filter: none;
+  transition: filter 0.3s;
+}
+.dark .tech-logo {
+  filter: brightness(2) invert(1) drop-shadow(0 0 2px #06b6d4);
+}
 /* Loader spinner animation */
 .loader-spinner {
   width: 3rem;
@@ -9,6 +17,18 @@
 }
 @keyframes spin {
   to { transform: rotate(360deg); }
+}
+
+/* Section reveal on scroll */
+section {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 600ms cubic-bezier(.2,.9,.2,1), transform 600ms cubic-bezier(.2,.9,.2,1);
+  will-change: opacity, transform;
+}
+section.in-view {
+  opacity: 1;
+  transform: none;
 }
 /* Accessibilité : focus visible sur tous les liens et boutons */
 a, button, .tech-badge {
