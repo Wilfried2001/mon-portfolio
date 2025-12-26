@@ -9,15 +9,17 @@ import {
   FaDiscord,
 } from "react-icons/fa";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
+  const { t } = useTranslation();
   const [sending, setSending] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
     const statusEl = document.getElementById("contact-status");
     setSending(true);
-    statusEl.textContent = "Envoi en cours...";
+    statusEl.textContent = t("contact.sending");
 
     const data = {
       name: (document.getElementById("contact-name") || {}).value,
@@ -32,11 +34,11 @@ function Contact() {
         body: JSON.stringify(data),
       });
       if (res.ok) {
-        statusEl.textContent = "Merci ! Votre message a été envoyé.";
+        statusEl.textContent = t("contact.success");
         (document.getElementById("contact-form") || {}).reset &&
           document.getElementById("contact-form").reset();
       } else {
-        statusEl.textContent = "Erreur lors de l'envoi. Essaie plus tard.";
+        statusEl.textContent = t("contact.error");
       }
     } catch (err) {
       statusEl.textContent = "Erreur réseau. Vérifie ta connexion.";
@@ -55,9 +57,11 @@ function Contact() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-4xl font-bold text-accent mb-6">Contact</h2>
+        <h2 className="text-4xl font-bold text-accent mb-6">
+          {t("contact.title")}
+        </h2>
         <p className="mb-8 text-lg text-slate-700 dark:text-slate-300">
-          Envie de collaborer ou de discuter ? Contacte-moi !
+          {t("contact.description")}
         </p>
         <form
           id="contact-form"
@@ -70,37 +74,37 @@ function Contact() {
             id="contact-name"
             type="text"
             name="name"
-            placeholder="Nom"
+            placeholder={t("contact.placeholder_name")}
             required
             className="rounded-lg px-4 py-3 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-accent outline-none transition"
-            aria-label="Nom"
+            aria-label={t("contact.name")}
           />
           <input
             id="contact-email"
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder={t("contact.placeholder_email")}
             required
             className="rounded-lg px-4 py-3 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-accent outline-none transition"
-            aria-label="Email"
+            aria-label={t("contact.email")}
           />
           <textarea
             id="contact-message"
             name="message"
-            placeholder="Votre message..."
+            placeholder={t("contact.placeholder_message")}
             required
             rows={4}
             className="rounded-lg px-4 py-3 border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:ring-2 focus:ring-accent outline-none transition"
-            aria-label="Message"
+            aria-label={t("contact.message")}
           ></textarea>
           <div className="flex items-center gap-4">
             <button
               id="contact-submit"
               type="submit"
               className="bg-primary hover:bg-accent text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all hover:scale-105 focus:outline-accent focus:ring-2 focus:ring-accent"
-              aria-label="Envoyer le message"
+              aria-label={t("contact.send")}
             >
-              Envoyer
+              {t("contact.send")}
             </button>
             <div
               id="contact-status"

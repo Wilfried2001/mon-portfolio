@@ -1,6 +1,12 @@
-import { FaExternalLinkAlt } from "react-icons/fa";
+import {
+  FaExternalLinkAlt,
+  FaMobileAlt,
+  FaDesktop,
+  FaServer,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const projets = [
   {
@@ -46,21 +52,96 @@ const projets = [
     type: "web",
     lien: "https://geo-europe-data.vercel.app/",
   },
+  {
+    titre: "Crud spring boot avec thymeleaf",
+    image: "image/project6.png",
+    description:
+      "Application de CRUD avec springboot et le moteur de template thymeleaf.",
+    techno: ["SpringBoot", "Java", "MySQL"],
+    type: "web",
+    lien: "https://github.com/Wilfried2001/spring-crud-with-thymeleaf.git",
+  },
+  {
+    titre: "TravelMate Mobile",
+    image: "image/project8.png",
+    description:
+      "Application mobile de voyages (itinéraires, cartes, réservations) faite avec React Native et Expo.",
+    techno: ["React Native", "Expo"],
+    type: "mobile",
+    lien: "https://expo.dev/",
+  },
+  {
+    titre: "DeskNotes",
+    image: "image/project7.png",
+    description:
+      "Application desktop de prise de notes (Electron + React) avec synchronisation locale.",
+    techno: ["Electron", "React"],
+    type: "desktop",
+    lien: "https://github.com/Wilfried2001/DeskNotes",
+  },
+
+  {
+    titre: "API SpringBoot - Auth",
+    image: "image/project9.png",
+    description:
+      "Microservice d'authentification en Spring Boot (JWT), endpoints sécurisés pour login/register.",
+    techno: ["Spring Boot", "Java", "JWT"],
+    type: "backend",
+    lien: "https://github.com/Wilfried2001/spring-auth-api",
+  },
+  {
+    titre: "API Laravel - CRUD",
+    image: "image/project10.png",
+    description:
+      "API backend construite avec Laravel pour gérer ressources et logique métier, consommée par un frontend SPA.",
+    techno: ["Laravel", "PHP", "MySQL"],
+    type: "backend",
+    lien: "https://github.com/Wilfried2001/laravel-api",
+  },
 ];
 
 function Realisations() {
-  const [filter, setFilter] = useState("all");
+  const { t } = useTranslation();
+  const allowedFilters = ["all", "web", "mobile", "desktop", "backend"];
+  const [filter, setFilter] = useState(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const f = params.get("filter");
+      if (f && allowedFilters.includes(f)) return f;
+    } catch (e) {}
+    return "all";
+  });
 
   const types = [
-    { key: "all", label: "Tous" },
-    { key: "web", label: "Web" },
-    { key: "mobile", label: "Mobile" },
-    { key: "desktop", label: "Desktop" },
+    { key: "all", label: t("projects.all") },
+    { key: "web", label: t("projects.web") },
+    { key: "mobile", label: t("projects.mobile") },
+    { key: "desktop", label: t("projects.desktop") },
+    { key: "backend", label: t("projects.backend") },
   ];
 
   const filtered = useMemo(() => {
     if (filter === "all") return projets;
     return projets.filter((p) => p.type === filter);
+  }, [filter]);
+
+  // sync filter -> query param (so ?filter=backend works and is shareable)
+  useEffect(() => {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (filter === "all") {
+        params.delete("filter");
+      } else {
+        params.set("filter", filter);
+      }
+      const newQuery = params.toString();
+      const newUrl = newQuery
+        ? `${window.location.pathname}?${newQuery}`
+        : window.location.pathname;
+      window.history.replaceState(null, "", newUrl);
+    } catch (e) {
+      // ignore
+    }
   }, [filter]);
 
   const container = {
@@ -84,24 +165,46 @@ function Realisations() {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-6 text-center">
-          <span className="text-accent">Mes réalisations</span>
+          <span className="text-accent">{t("projects.title")}</span>
         </h2>
 
         {/* Filters */}
-        <div className="flex justify-center gap-3 mb-8">
-          {types.map((t) => (
-            <button
-              key={t.key}
-              onClick={() => setFilter(t.key)}
-              className={`px-4 py-2 rounded-full font-medium transition-all focus:outline-accent focus:ring-2 focus:ring-accent ${
-                filter === t.key
-                  ? "bg-accent text-white shadow-lg"
-                  : "bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200 hover:scale-105"
-              }`}
-              aria-pressed={filter === t.key}
+        <div className="flex justify-center gap-3 mb-8 relative">
+          {types.map((typeItem) => (
+            <motion.button
+              key={typeItem.key}
+              onClick={() => setFilter(typeItem.key)}
+              whileTap={{ scale: 0.98 }}
+              className={`relative px-4 py-2 rounded-full font-medium transition-all focus:outline-accent focus:ring-2 focus:ring-accent overflow-hidden`}
+              aria-pressed={filter === typeItem.key}
             >
-              {t.label}
-            </button>
+              <span className="relative z-10 text-sm md:text-base">
+                {typeItem.key === "mobile" ? (
+                  <>
+                    <FaMobileAlt className="inline mr-2" /> {typeItem.label}
+                  </>
+                ) : typeItem.key === "desktop" ? (
+                  <>
+                    <FaDesktop className="inline mr-2" /> {typeItem.label}
+                  </>
+                ) : typeItem.key === "backend" ? (
+                  <>
+                    <FaServer className="inline mr-2" /> {typeItem.label}
+                  </>
+                ) : (
+                  typeItem.label
+                )}
+              </span>
+
+              {filter === t.key && (
+                <motion.span
+                  layoutId="filterActive"
+                  className="absolute inset-0 rounded-full bg-accent/95 shadow-lg z-0"
+                  initial={false}
+                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
+                />
+              )}
+            </motion.button>
           ))}
         </div>
 
@@ -129,6 +232,11 @@ function Realisations() {
                 <span className="absolute top-3 left-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md">
                   {p.type?.toUpperCase()}
                 </span>
+                {p.type === "backend" && (
+                  <span className="absolute top-3 right-3 bg-amber-500 text-white text-xs px-2 py-1 rounded-md shadow-md">
+                    {t("projects.apiBadge")}
+                  </span>
+                )}
               </div>
               <div className="p-5">
                 <h3 className="text-xl font-semibold mb-2 text-primary-dark dark:text-primary-light">
@@ -154,7 +262,8 @@ function Realisations() {
                   className="inline-flex items-center gap-2 text-accent hover:underline focus:outline-accent"
                   tabIndex={0}
                 >
-                  Voir le projet <FaExternalLinkAlt className="text-xs" />
+                  {t("projects.viewProject")}{" "}
+                  <FaExternalLinkAlt className="text-xs" />
                 </a>
               </div>
             </motion.article>

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { useTranslation } from "react-i18next";
 import TechStack from "./TechStack";
 import {
   FaReact,
@@ -35,6 +36,7 @@ function SpringIcon({ className }) {
 }
 
 function Hero() {
+  const { t } = useTranslation();
   return (
     <>
       <section
@@ -75,29 +77,29 @@ function Hero() {
           className="w-full md:w-2/3 text-center md:text-left mt-6 md:mt-0"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3">
-            Salut, je suis <span className="text-cyan-400">Wizzy Dev</span>
+            {t("hero.greeting")}{" "}
+            <span className="text-cyan-400">{t("hero.title")}</span>
           </h1>
           <div className="mb-4 text-sm md:text-base text-slate-600 dark:text-slate-300 font-medium">
-            Web & Mobile Developer — React · React Native · Laravel · Spring
-            Boot
+            {t("hero.role")}
           </div>
           {/* Encart technique */}
           <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-4">
             <span className="tech-badge bg-primary-light dark:bg-slate-700 text-primary-dark dark:text-primary-light focus:outline-accent transition-all">
               <FaReact className="text-tech-react" title="React" />
-              React
+              {t("tech.react")}
             </span>
             <span className="tech-badge bg-accent-light dark:bg-accent-dark text-accent-dark dark:text-accent-light focus:outline-accent transition-all">
               <FaMobileAlt className="text-accent" title="Mobile" />
-              Mobile
+              {t("tech.mobile")}
             </span>
             <span className="tech-badge bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-200 focus:outline-accent transition-all">
               <SpringIcon className="inline-block mr-2 text-green-600" />
-              Spring Boot
+              {t("tech.springBoot")}
             </span>
             <span className="tech-badge bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 focus:outline-accent transition-all">
               <FaNodeJs className="text-tech-node" title="Node.js" />
-              Node.js
+              {t("tech.nodejs")}
             </span>
             <span className="tech-badge bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-200 focus:outline-accent transition-all">
               <FaLaravel className="text-orange-500" title="Laravel" />
@@ -106,16 +108,16 @@ function Hero() {
 
             <span className="tech-badge bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-accent transition-all">
               <FaGithub className="" title="GitHub" />
-              GitHub
+              {t("tech.github")}
             </span>
           </div>
           <p className="text-base md:text-lg text-slate-600 dark:text-slate-300 font-medium mb-6">
             <Typewriter
               words={[
-                "Développeur Web & Mobile",
-                "Backend Lover",
-                "Créateur de solutions innovantes",
-                "Passionné par les nouvelles technos",
+                t("hero.profession"),
+                t("hero.backendLover"),
+                t("hero.innovator"),
+                t("hero.passionate"),
               ]}
               loop
               cursor
@@ -131,7 +133,7 @@ function Hero() {
               className="inline-block bg-primary hover:bg-accent text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all hover:scale-105 focus:outline-accent focus:ring-2 focus:ring-accent"
               tabIndex={0}
             >
-              Voir mes projets
+              {t("hero.viewProjects")}
             </a>
 
             <a
@@ -139,7 +141,7 @@ function Hero() {
               className="inline-block border border-accent text-accent font-semibold py-3 px-6 rounded-full shadow-sm hover:shadow-md transition-all hover:bg-accent hover:text-white focus:outline-accent focus:ring-2 focus:ring-accent"
               tabIndex={0}
             >
-              Me contacter
+              {t("hero.contact")}
             </a>
 
             <a
@@ -148,7 +150,7 @@ function Hero() {
               className="inline-flex items-center gap-2 bg-accent hover:bg-primary text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-all hover:scale-105 focus:outline-accent focus:ring-2 focus:ring-primary"
               tabIndex={0}
             >
-              <FaDownload /> Télécharger le CV
+              <FaDownload /> {t("hero.downloadCV")}
             </a>
           </div>
         </motion.div>

@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 function About() {
+  const { t } = useTranslation();
+
   const stats = [
-    { label: "Années d'expérience", value: "2+" },
-    { label: "Projets réalisés", value: "15+" },
-    { label: "Clients satisfaits", value: "100%" },
+    { label: t("about.experience") || "Années d'expérience", value: "2+" },
+    { label: t("about.projects") || "Projets réalisés", value: "15+" },
+    { label: t("about.clients") || "Clients satisfaits", value: "100%" },
   ];
 
   const timeline = [

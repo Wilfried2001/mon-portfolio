@@ -1,0 +1,61 @@
+{
+  "hero": {
+    "greeting": "Salut, je suis",
+    "title": "Wizzy Dev",
+    "role": "Développeur Web & Mobile — React · React Native · Laravel · Spring Boot",
+    "profession": "Développeur Web & Mobile",
+    "backendLover": "Backend Lover",
+    "innovator": "Créateur de solutions innovantes",
+    "passionate": "Passionné par les nouvelles technos",
+    "viewProjects": "Voir mes projets",
+    "contact": "Me contacter",
+    "downloadCV": "Télécharger le CV"
+  },
+  "navbar": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description": "Je suis un développeur passionné avec une expérience en technologies modernes.",
+    "skills": "Compétences",
+    "experience": "Années d'expérience",
+    "projects": "Projets réalisés",
+    "clients": "Clients satisfaits",
+    "timeline": "Mon parcours"
+  },
+  "projects": {
+    "title": "Mes réalisations",
+    "all": "Tous",
+    "web": "Web",
+    "mobile": "Mobile",
+    "desktop": "Desktop",
+    "backend": "Backend",
+    "apiBadge": "API",
+    "viewProject": "Voir le projet"
+  },
+  "contact": {
+    "title": "Me contacter",
+    "description": "Envie de collaborer ou de discuter ? Contacte-moi !",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "send": "Envoyer",
+    "sending": "Envoi...",
+    "success": "Message envoyé avec succès !",
+    "error": "Erreur lors de l'envoi. Essaie plus tard.",
+    "placeholder_name": "Votre nom",
+    "placeholder_email": "votre.email@example.com",
+    "placeholder_message": "Votre message..."
+  },
+  "tech": {
+    "react": "React",
+    "mobile": "Mobile",
+    "nodejs": "Node.js",
+    "laravel": "Laravel",
+    "github": "GitHub",
+    "springBoot": "Spring Boot"
+  }
+}
